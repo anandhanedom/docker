@@ -16,8 +16,8 @@
 
 1. List running containers: docker ps
 2. Run container in detached mode: docker run -d redis
-3. Stop a container: docker stop {container_id}
-4. Start a container: docker start {container_id}
+3. Stop a container: docker stop {container_id/container_name}
+4. Start a container: docker start {container_id/container_name}
 5. List running and stopped containers: docker ps -a
 6. Pull image and start container: docker run redis
 7. Bind host port to container port: docker run -p{host_port}:{container_port} redis:4.0
