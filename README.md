@@ -3,7 +3,6 @@
 ### Image
 
 - actual package (eg. config, postgresSQL v9.3, start script)
-- movable
 
 ### Container
 
@@ -14,18 +13,27 @@
 
 ### Basic commands
 
-1. List running containers: docker ps
-2. Run container in detached mode: docker run -d redis
-3. Stop a container: docker stop {container_id/container_name}
-4. Start a container: docker start {container_id/container_name}
-5. List running and stopped containers: docker ps -a
-6. Pull image and start container: docker run redis
-7. Bind host port to container port: docker run -p{host_port}:{container_port} redis:4.0
-8. List docker images: docker images
-9. Run container with a custom name: docker run -d -p6001:6379 --name redis-older redis:4.0
+1. Start a container: run
+2. List running containers: ps
+3. List all containers: ps-a
+4. Stop a running container: stop {name/id}
+5. Remove a container: rm {name/id}
+6. List images: images
+7. Remove image: rmi {image}
+8. Pull: docker pull {image}
+9. Execute a command: docker exec {container} cat /etc/hosts
+10. Run - attach & detach: docker run -d {image} , docket attach image
 
-### Debugging commands
+### Run
 
-1. Show logs: docker logs {container_id / name}
-2. Navigate inside container(envs, config etc - virtual file system) : docker exec -it {container_id/container_name} /bin/bash
- 
+1. Run in interactive mode (input etc.): docker run -i {image}
+2. Psuedo terminal (prompt etc): docker run -it {image}
+3. Port mapping: docker run -p {host_port}:{container_port} {image}
+4. Volume mapping: docker run -v /opt/datadir:/var/lib/mysql mysql
+5. Env variable: docker run -e {APP_COLOR=blue} {image}
+
+### Debugging
+
+1. Inspect container: docker inspect {name/id}
+2. Container logs: docker logs {name/id}
+3. Inspect env variable: docker inspect {image}
