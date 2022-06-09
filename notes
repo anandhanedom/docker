@@ -1,0 +1,4 @@
+1. Build from DockerFilec:   docker build -t myapp .
+2. Running container (with name):  docker container run --name my-app-c1 -p 4000:4000  my-node-app
+3. Start container: docker start {container_name}
+4. Remove all: docker system prune -a
